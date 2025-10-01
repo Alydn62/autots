@@ -3,44 +3,17 @@
     "api/**.js": {
       "maxDuration": 60,
       "memory": 1024,
-      "runtime": "nodejs18.x",
-      "environment": {
-        "PLAYWRIGHT_BROWSERS_PATH": "0"
-      }
+      "runtime": "nodejs18.x"
     }
   },
   "routes": [
-    {
-      "src": "/api/create",
-      "dest": "/api/create.js"
-    },
-    {
-      "src": "/api/send-otp",
-      "dest": "/api/send-otp.js"
-    },
-    {
-      "src": "/api/check-otp",
-      "dest": "/api/check-otp.js"
-    },
-    {
-      "src": "/api/check-retry",
-      "dest": "/api/check-retry.js"
-    },
-    {
-      "src": "/api/status",
-      "dest": "/api/status.js"
-    },
-    {
-      "src": "/api/logs",
-      "dest": "/api/logs.js"
-    },
-    {
-      "src": "/api/auto-login",
-      "dest": "/api/auto-login.js"
-    },
-    {
-      "src": "/api/clear",
-      "dest": "/api/clear.js"
-    }
+    { "src": "/api/create", "dest": "/api/create.js" },
+    { "src": "/api/send-otp", "dest": "/api/send-otp.js" },
+    { "src": "/api/check-otp", "dest": "/api/check-otp.js" },
+    { "src": "/api/check-retry", "dest": "/api/check-retry.js" },
+    { "src": "/api/status", "dest": "/api/status.js" },
+    { "src": "/api/logs", "dest": "/api/logs.js" },
+    { "src": "/api/auto-login", "dest": "/api/auto-login.js" },
+    { "src": "/api/clear", "dest": "/api/clear.js" }
   ]
 }
