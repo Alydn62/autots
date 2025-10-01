@@ -1,23 +1,19 @@
 {
-  "name": "treasury-vercel",
-  "version": "1.0.0",
-  "private": true,
-  "description": "Serverless API wrapper for Treasury automation (Vercel-ready)",
-  "scripts": {
-    "create": "node app.js create",
-    "send-otp": "node app.js send-otp",
-    "check-otp": "node app.js check-otp",
-    "status": "node app.js status",
-    "auto-login": "node app.js auto-login",
-    "check-retry": "node app.js check-retry",
-    "logs": "node app.js logs",
-    "clear": "node app.js clear",
-    "postinstall": "npx playwright install chromium"
+  "functions": {
+    "api/**.js": {
+      "maxDuration": 60,
+      "memory": 1024,
+      "runtime": "nodejs18.x"
+    }
   },
-  "dependencies": {
-    "playwright": "^1.55.0"
-  },
-  "engines": {
-    "node": ">=18"
-  }
+  "routes": [
+    { "src": "/api/create", "dest": "/api/create.js" },
+    { "src": "/api/send-otp", "dest": "/api/send-otp.js" },
+    { "src": "/api/check-otp", "dest": "/api/check-otp.js" },
+    { "src": "/api/check-retry", "dest": "/api/check-retry.js" },
+    { "src": "/api/status", "dest": "/api/status.js" },
+    { "src": "/api/logs", "dest": "/api/logs.js" },
+    { "src": "/api/auto-login", "dest": "/api/auto-login.js" },
+    { "src": "/api/clear", "dest": "/api/clear.js" }
+  ]
 }
